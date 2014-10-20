@@ -71,7 +71,7 @@ Minimum number of days between password change          : 0
 Maximum number of days between password change          : 99999
 Number of days of warning before password expires       : 7
 ```
-Theo mặc định, mật khẩu của người dùng được thiết lập để không bao giờ hết hạn. 
+Theo mặc định, mật khẩu của người dùng được thiết lập để không bao giờ hết hạn
 Để thay đổi thời gian hết hạn mật khẩu cho người dùng xmodulo:
 ```
 sudo chage -E 6/30/2014 -m 5 -M 90 -I 30 -W 14 xmodulo
