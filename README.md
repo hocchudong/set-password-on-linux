@@ -11,7 +11,8 @@ Các mô-đun cracklib PAM được cài đặt mặc định trên CentOS, Fedo
 sudo apt-get install libpam-cracklib
 ```
 ###Ngăn dùng lại mật khẩu cũ
-Tìm đến dòng có cả 2 "password", "pam_unix.so và thêm "remember = 5" vào dòng này. Nó sẽ ngăn sử dụng 5 mật khẩu được sử dụng gần đây nhất (bằng cách lưu chúng vào file /etc/sercurity/opasswd).
+Tìm đến dòng có cả 2 "password", "pam_unix.so và thêm "remember = 5" vào dòng này. Nó sẽ ngăn sử dụng 5 mật khẩu được sử dụng gần đây nhất (bằng cách lưu chúng vào file /etc/sercurity/opasswd
+
 On Debian, Ubuntu or Linux Mint:
 ```
 sudo vi /etc/pam.d/common-password
@@ -23,7 +24,8 @@ sudo vi /etc/pam.d/system-auth
 password   sufficient   pam_unix.so sha512 shadow nullok try_first_pass use_authtok remember=5
 ```
 ###Set độ dài passwd ngắn nhất
-Tìm sòng chứa cả 2 "password", "pam_unix.so" và thêm "minlen = 10"
+Tìm sòng chứa cả 2 "password", "pam_unix.so" và thêm "minlen = 10".
+
 On Debian, Ubuntu or Linux Mint:
 ```
 sudo vi /etc/pam.d/common-password
@@ -36,6 +38,7 @@ password   requisite   pam_cracklib.so retry=3 difok=3 minlen=10
 ```
 ###Set độ phức tạp passwd
 Tìm đến dòng có cả hai "password", "pam_unix.so" và thêm "ucredit=-1 lcredit=-2 dcredit=-1 ocredit=-1". Điều này có nghĩa là pasword của bạn buộc phải có ít nhất 1 một chữ hoa (ucredit), 2 chữ thường (lcredit), một chữ số (dcredit) và một biểu tượng (ocredit).
+
 On Debian, Ubuntu or Linux Mint:
 ```
 sudo vi /etc/pam.d/common-password
